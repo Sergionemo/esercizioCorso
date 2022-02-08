@@ -1,0 +1,60 @@
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(5, 5, 5);
+  border-color: rgb(2, 2, 2) transparent rgb(0, 0, 0) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+.login{
+    width: 500px;
+    margin-top: 200px;
+    position: relative;
+    padding-bottom: 100px !important;
+}
+#btn-login{
+    position: absolute;
+    left: 10vw;
+}
+label, h1{
+    color: white;
+}
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: rgba(240, 240, 240, 0.856);
+    place-items: center;
+    visibility: hidden;
+    z-index: -10;
+}
+.open-modal{
+    visibility: visible;
+    z-index: 10;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body{
+  background: rgb(34,193,195);
+background: linear-gradient(80deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+#emailErr, #passErr{
+    color: red;
+}
