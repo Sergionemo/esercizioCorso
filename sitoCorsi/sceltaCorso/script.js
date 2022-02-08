@@ -86,7 +86,9 @@ $(() => {
             corso1.scelta3 = scel3;
         }
         if (flag) {
-            $("#corsoCreato").text(`Il corso creato da ${utente} chiamato ${corso1.nome} della durata di ${corso1.durata} mesi, Ha scelto come argomenti ${corso1.scelta1} ${corso1.scelta2} ${corso1.scelta3}`)
+            $("#corsoCreato").text(`Il corso creato da ${utente} chiamato ${corso1.nome} della durata di ${corso1.durata} mesi, Ha scelto come argomenti ${corso1.scelta1} ${corso1.scelta2} ${corso1.scelta3}`);
+            let name = $("#nomeCorso").val("");
+            let durata1 = $("#durata").val("");
         }
     })
 });
