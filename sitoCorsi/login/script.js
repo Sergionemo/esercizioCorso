@@ -5,6 +5,7 @@ $(() => {
         let password = $("#password").val().trim();
         let flag1 = true;
         let flag2 = true;
+
         const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
         if (utente == "") {
@@ -18,21 +19,24 @@ $(() => {
             flag1 = true;
         }
 
-        const regexPass = /^(?=.*[0-9])$/;
+        
+        const regexPass = /(?=.*?[0-9])/;
+
         if (password == "") {
             $("#passErr").text("Inserire password");
-            fla2 = false;
+            flag2 = false;
         } else if (password.length < 6) {
             $("#passErr").text("La password deve essere almeno di 6 caratteri");
             flag2 = false;
-        // } else if (!regexPass.test(password)) {
-        //     $("#passErr").text("Inserire password con almeno un valore numerico");
-        //     flag2 = false;
+        } else if (!regexPass.test(password)) {
+            $("#passErr").text("Inserire password con almeno un valore numerico");
+            flag2 = false;
         }else {
             $("#passErr").text("");
             flag2 = true;
         }
 
+        console.log(password);
         if (flag1 && flag2) {
             caricamento();
             setTimeout(login, 5000);
